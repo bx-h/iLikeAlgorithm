@@ -1,6 +1,11 @@
 package hbx.PriorityQueue;
 
-public class MaxPQ <Key extends Comparable<Key>>{
+/**
+ * 最大堆，有效范围是：[1, length]
+ * 左节点为：
+ * @param <Key>
+ */
+public class MaxPQ<Key extends Comparable<Key>> {
     /**
      * 最大堆数组。有效范围是[1, length]
      */
@@ -13,6 +18,7 @@ public class MaxPQ <Key extends Comparable<Key>>{
 
     /**
      * 最大堆的第一个元素即为最大值
+     *
      * @return 最大元素
      */
     public Key max() {
@@ -21,6 +27,7 @@ public class MaxPQ <Key extends Comparable<Key>>{
 
     /**
      * 在尾部插入，然后上浮。
+     *
      * @param e 要插入的元素
      */
     public void insert(Key e) {
@@ -32,6 +39,7 @@ public class MaxPQ <Key extends Comparable<Key>>{
 
     /**
      * 获取第一个元素，交换第一个元素与最后一个元素，删除最后一个元素（为之前的最大元素），下沉头部元素（为之前的最后一个元素）
+     *
      * @return 最大元素
      */
     public Key delMax() {
@@ -45,6 +53,7 @@ public class MaxPQ <Key extends Comparable<Key>>{
 
     /**
      * 上浮。如果 pq[k] > pq[父亲], 则上浮
+     *
      * @param k
      */
     private void swim(int k) {
@@ -57,6 +66,7 @@ public class MaxPQ <Key extends Comparable<Key>>{
 
     /**
      * 下沉。如果pq[k] < max(left[k], right[k])，下沉
+     *
      * @param k
      */
     private void sink(int k) {
@@ -80,6 +90,7 @@ public class MaxPQ <Key extends Comparable<Key>>{
 
     /**
      * 交换两数。
+     *
      * @param i 第一个数的下标
      * @param j 第二个数的下标
      */
@@ -94,6 +105,11 @@ public class MaxPQ <Key extends Comparable<Key>>{
         return pq[i].compareTo(pq[j]);
     }
 
+    /**
+     * 下面三个函数都是返回的下标
+     * @param k
+     * @return
+     */
     public int parent(int k) {
         return k / 2;
     }

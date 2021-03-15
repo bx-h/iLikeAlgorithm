@@ -1,7 +1,6 @@
 package LRU_LFU;
 
-import java.util.HashMap;
-import java.util.LinkedHashSet;
+import java.util.*;
 
 /**
  * 1、调用get(key)方法时，要返回该key对应的val。<br/>
@@ -112,6 +111,21 @@ public class LFU {
         // 键 2 已经被淘汰删除，返回 -1
         res = cache.get(2);
         System.out.println("get 2: " + res);
+
+        PriorityQueue<Integer> maxHeap = new PriorityQueue<>((o1, o2) -> {return o2.compareTo(o1);});
+        PriorityQueue<Integer> minHeap = new PriorityQueue<>();
+        maxHeap.offer(10);
+        maxHeap.offer(21);
+        maxHeap.offer(9);
+        System.out.println(maxHeap.peek());
+
+
+
+
+
+
+
+
     }
 
 }
